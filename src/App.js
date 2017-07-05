@@ -23,28 +23,29 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Calculator</h2>
         </div>
-        <Display leftNumber={this.state.leftNumber} />
+        <Display leftNumber={this.state.leftNumber} operator = {this.state.operator} rightNumber={this.state.rightNumber}/>
         <OperationButton addOperator={this.addOperator}/>
         <NumberButton addNumber={this.addNumber}/>
       </div>
     );
   }
   addNumber (event) {
-    console.log('click!');
-    console.dir(event.target);
     const value = event.target.innerHTML;
-    this.setState({
-      leftNumber: this.state.leftNumber + value
-    })
+    if (this.state.operator.length === 0) {
+      this.setState({
+        leftNumber: this.state.leftNumber + value
+      });
+    } else {
+      this.setState({
+        rightNumber: this.state.rightNumber + value
+      });
+    }
   }
   addOperator (event) {
-    console.log('click!');
-    console.dir(event.target);
     const op = event.target.innerHTML;
     this.setState({
-      operator: this.state.operator + op
+      operator: op
     });
-    
   }
 }
 

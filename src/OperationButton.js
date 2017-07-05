@@ -19,14 +19,15 @@ class OperationButton extends React.Component {
                         <div key={i} 
                             className="row">
                             {row.map((value) => {
-                                return <Button key={value} value={value} handleClick={this.props.addOperator} />;
+                                return <Button key={value} 
+                                value={value} 
+                                handleClick={this.props.addOperator} />;
                             })}
                         </div>
                     );
                 })}
         </div>
-        )
-        
+        );   
     }
 }
 

@@ -4,7 +4,7 @@ class Display extends React.Component {
     render() {
         return (
             <div>
-                <span>{this.props.leftNumber}</span>
+                <span>{this.props.leftNumber} {this.props.operator} {this.props.rightNumber}</span>
             </div>
 
         );
