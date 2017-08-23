@@ -50,7 +50,7 @@ class App extends Component {
         leftNumber: res, 
         rightNumber: '',
         operator: ''
-      })
+      });
     } else {
       this.setState({
         operator: op
